@@ -118,6 +118,21 @@ function multiply(array, l) {
   return multResult;
 }
 
+// Forma de hacer la Función Reduce usando el acumulador y el valor inicial
+
+// function newReduce(array, callback, initialValue) {
+//   var acumulator = initialValue;
+//   for (var l = 0; l <= array.length - 1; l++) {
+//     var acumulator = callback(array[i], acumulator);
+//     console.log(acumulator);
+//   }
+//   return acumulator;
+// };
+
+// newReduce([1, 2, 3], function(item, acumulator){
+// return acumulator * item;
+// },1); //Donde 1 es el valor inicial
+
 var resultReduce = newReduce([1, 2, 3], multiply);
 
 // Imprimiendo el resultado en el html
