@@ -62,9 +62,6 @@ function newFilter(array, callback) {
   for (var k = 0; k <= array.length - 1; k++) {
     //Condicional si el valor del arreglo es vacío no se hace la función
     if (array[k] !== undefined) {
-      console.log("Dale" + k);
-      console.log(array[k]);
-      console.log(array);
       var y = appFilter(array, k);
       console.log(y);
     } else {
@@ -106,24 +103,22 @@ filterCont.appendChild(newP3);
 // Función Reduce
 
 function newReduce(array, callback) {
-  var z = callback(array);
-  console.log(z);
+  for (var l = 0; l <= array.length - 1; l++) {
+    var z = callback(array, l);
+    console.log(z);
+  }
   return z;
 };
 
 var multResult = 1;
 
-function multiply(array) {
-  //Recorroendo el arreglo
-  for (var l = 0; l <= array.length - 1; l++) {
-    multResult *= array[l];
-  }
+function multiply(array, l) {
+  multResult *= array[l];
   console.log(multResult);
   return multResult;
 }
 
 var resultReduce = newReduce([1, 2, 3], multiply);
-console.log("reultado" +resultReduce);
 
 // Imprimiendo el resultado en el html
 var reduceCont = document.getElementById("cont-reduce");
